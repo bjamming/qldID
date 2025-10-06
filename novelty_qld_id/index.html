@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0b4f6c">
+  <title>Novelty QLD Digital ID (Novelty Only)</title>
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- QRCode library (small, client-side) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- html2canvas for export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>NOVELTY QLD DIGITAL ID</h1>
+    <button id="installBtn" class="btn subtle" title="Install to Home Screen">Install</button>
+  </header>
+
+  <main class="container">
+    <section class="preview-area">
+      <div id="cardShell" class="card-shell" role="region" aria-label="Novelty ID Preview">
+        <div id="card" class="card">
+          <div class="card-face card-front">
+            <div class="brand-strip">NOVELTY — NOT A GOVERNMENT ID</div>
+            <div class="photo" id="photoArea" title="Tap photo to cycle avatars">👤</div>
+            <div class="details">
+              <div class="name" id="displayName">Ben Greatz</div>
+              <div class="title" id="displayTitle">Beach Ranger</div>
+              <div class="meta">
+                <div class="meta-row"><strong>Card type</strong> &middot; NOVELTY</div>
+                <div class="meta-row"><strong>State</strong> &middot; Queensland (novelty)</div>
+              </div>
+            </div>
+            <div class="qrcode" id="qrcode"></div>
+            <div class="watermark">NOVELTY</div>
+          </div>
+
+          <div class="card-face card-back">
+            <div class="back-header">NOVELTY ID — BACK</div>
+            <div class="back-content">
+              <p>This is a novelty card only. It is not a government identification and must not be used as identification under any circumstances.</p>
+              <ul>
+                <li><strong>Fun fact:</strong> Queensland has lots of beaches.</li>
+                <li><strong>Favourite color:</strong> <span id="displayColorName">Teal</span></li>
+              </ul>
+            </div>
+            <div class="barcode-sim">| ||| ||| | || ||| |</div>
+            <div class="watermark">NOVELTY</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="flipBtn" class="btn">Flip Card</button>
+        <button id="downloadBtn" class="btn primary">Download Image</button>
+        <button id="shareBtn" class="btn">Share</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <h2>Personalise (novelty only)</h2>
+
+      <label class="field">
+        <span>Full name</span>
+        <input id="nameInput" type="text" value="Ben Greatz" placeholder="Your full name (novelty only)">
+      </label>
+
+      <label class="field">
+        <span>Fun title</span>
+        <input id="titleInput" type="text" value="Beach Ranger" placeholder="E.g. Beach Ranger">
+      </label>
+
+      <label class="field">
+        <span>Favourite color</span>
+        <input id="colorInput" type="color" value="#2fb3ad">
+        <span id="colorHex">#2fb3ad</span>
+      </label>
+
+      <label class="field">
+        <span>QR payload (novelty)</span>
+        <input id="qrInput" type="text" value="novelty:Ben Greatz|Beach Ranger" placeholder="Text encoded in QR code">
+      </label>
+
+      <div class="small-actions">
+        <button id="randomBtn" class="btn subtle">Randomise</button>
+        <button id="resetBtn" class="btn subtle">Reset</button>
+      </div>
+
+      <div class="disclaimer">
+        <strong>IMPORTANT:</strong> This is a novelty card only — <em>NOT</em> a government-issued ID. It intentionally avoids official emblems, wording and exact Queensland design. Do not attempt to use as identification.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Made for fun. Host on GitHub Pages, Netlify, or Vercel, then use Safari &rarr; Share &rarr; Add to Home Screen on iPhone to install.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
